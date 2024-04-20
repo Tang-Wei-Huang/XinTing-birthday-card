@@ -31,7 +31,7 @@
             <a href="#about">繼續往下看</a>
         </div>
     </header>
-
+    
     <section id="about">
         <div class="about-content">
             <div class="swiper-container">
@@ -48,11 +48,10 @@
     </section>
 
     <section id="special-moments">
-        <h2>Special Moments</h2>
+        <h2>給你的一段話</h2>
         <div class="moment">
-            <h3>我們的相遇</h3>
             <p>
-                第一次為了一個人做網頁，你要感到榮幸喔!!<br /><br />
+                我第一次為了一個人做網頁，你要感到榮幸喔!!<br /><br />
 
                 在認識你之前，我從來沒想過我們會變得這麼熟。回想起來，如果不是你在IG上私訊我，告訴我也想買那個按鍵吊飾，我們可能永遠不會有交集。
                 後來，明明有這麼多助教，你卻偏偏找我教程式。一開始，我還覺得有點麻煩哈哈哈，但不知不覺間，我竟然開始期待每個禮拜二下午教你程式。
@@ -64,7 +63,7 @@
                 不過沒關係，我也不知道哪個環節出了問題，但那段時光對我來說是非常重要的回憶。
                 你讓我知道，真心喜歡我的人會無時無刻地想來找我，有趣的事情也會首先與我分享。你也算是教會了我一些道理呢。<br />
                 <br />
-                最後，祝你生日快樂，希望你每天都可以開開心心的，你笑起來真的很好看，我很喜歡～<br />
+                最後，祝你生日快樂，希望你每天都可以開開心心的，因為你笑起來的樣子真的很可愛雖然有點呆呆的，但我很喜歡～<br />
             </p>
         </div>
     </section>
@@ -80,14 +79,14 @@
         $(window).on('scroll', function () {
             var aboutTop = $('#about').offset().top;
             var scrollTop = $(window).scrollTop();
-
+            /*
             if (scrollTop >= aboutTop && headerFixed) {
                 $('header').css('display', 'none');
                 headerFixed = false;
             } else if (scrollTop < aboutTop && !headerFixed) {
                 $('header').css('display', 'flex');
                 headerFixed = true;
-            }
+            }*/
         });
 
 
