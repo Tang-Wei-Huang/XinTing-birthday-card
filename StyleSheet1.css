@@ -1,0 +1,118 @@
+﻿body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+max-width: 100%;
+}
+
+header {
+background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('img1.jpg');
+background-size: cover;
+background-position: center;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+.header-content {
+text-align: center;
+justify-content: flex-start; /* 將內容向上對齊 */
+align-items: center;
+flex-direction: column;
+height: 90%;
+color: black;
+}
+
+.header-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.header-content p {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.header-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+    .header-content a:hover {
+        background-color: #ff4d4d;
+    }
+
+#about {
+background-color: #f4f4f4;
+}
+
+.about-content {
+max-width: 100%;
+text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.about-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+section {
+min-height: 100%;
+padding: 10px;
+}
+
+#special-moments {
+background-color: #f9f9f9;
+margin:10px;
+}
+
+.moment {
+margin-bottom: 40px;
+padding: 10px 0;
+}
+
+.moment h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.moment p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.moment img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-container {
+width: auto;
+height: 10%;
+}
+
+.swiper-slide img {
+max-width: 80%;
+height: auto;
+}
+
+#happyImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

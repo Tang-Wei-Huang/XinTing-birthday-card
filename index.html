@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欣庭的生日卡片</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Swiper v4.1.0 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.esm.bundle.js"></script>
+    <link href="StyleSheet1.css" rel="stylesheet"/>
+	<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Bootstrap JavaScript（選擇性） -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <br>
+            <h1>祝你生日快樂!</h1>
+            <p>又笨又呆又可愛的張欣庭</p>
+            <p>這個網頁是專門為你做的...</p>
+            <p>是不是覺得我超強的呀</p>
+            <a href="#about">繼續往下看</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="about-content">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- 幻燈片內容 -->
+                    <div class="swiper-slide"><img src="img2.jpg"></div>
+                    <div class="swiper-slide"><img src="img3.jpg"></div>
+                    <div class="swiper-slide"><img src="img4.jpg"></div>
+                </div>
+                <!-- 分頁 -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="special-moments">
+        <h2>Special Moments</h2>
+        <div class="moment">
+            <h3>我們的相遇</h3>
+            <p>
+                第一次為了一個人做網頁，你要感到榮幸喔!!<br /><br />
+
+                在認識你之前，我從來沒想過我們會變得這麼熟。回想起來，如果不是你在IG上私訊我，告訴我也想買那個按鍵吊飾，我們可能永遠不會有交集。
+                後來，明明有這麼多助教，你卻偏偏找我教程式。一開始，我還覺得有點麻煩哈哈哈，但不知不覺間，我竟然開始期待每個禮拜二下午教你程式。
+                雖然你學得很慢，每天都會喊累，但你都會乖乖地完成。<br />
+                <br />
+                我對你最深刻的印象是在東大門，你手上拿著啃到一半的玉米，看到有小女孩跌倒，竟然願意蹲下去幫她撿鞋子。
+                隔天，我就跟少軒說：『她這樣讓我有點暈了哈哈哈。』
+                雖然最後我們沒有在一起，但現在我還是有一點點喜歡你，應該感覺得出來吧哈哈。
+                不過沒關係，我也不知道哪個環節出了問題，但那段時光對我來說是非常重要的回憶。
+                你讓我知道，真心喜歡我的人會無時無刻地想來找我，有趣的事情也會首先與我分享。你也算是教會了我一些道理呢。<br />
+                <br />
+                最後，祝你生日快樂，希望你每天都可以開開心心的，你笑起來真的很好看，我很喜歡～<br />
+            </p>
+        </div>
+    </section>
+    <img src="happy.jpeg" id="happyImg">
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var headerFixed = true;
+
+         //當滾動到 #about 部分時，移除 header 的固定定位
+        $(window).on('scroll', function () {
+            var aboutTop = $('#about').offset().top;
+            var scrollTop = $(window).scrollTop();
+
+            if (scrollTop >= aboutTop && headerFixed) {
+                $('header').css('display', 'none');
+                headerFixed = false;
+            } else if (scrollTop < aboutTop && !headerFixed) {
+                $('header').css('display', 'flex');
+                headerFixed = true;
+            }
+        });
+
+
+        //其它連到對應區塊
+        $("a").on("click", function () {
+            var hrefLink = $(this).attr("href");
+            console.log(hrefLink);
+            $("html,body").animate(
+                {
+                    scrollTop: $(hrefLink).offset().top //直接到相對位置
+                },
+                800
+            );
+        });
+
+        //輪播
+        var mySwiper = new Swiper(".swiper-container", {
+            // 參數設定[註1]
+            direction: "horizontal", // 方向
+            loop: true,  // 循環
+            autoplay: {
+                delay:2000,
+            },
+            pagination: {
+                el: ".swiper-pagination",  // 分頁物件
+            },
+            navigation: {
+                nextEl: ".swiper-button-next", // 上一頁按鈕物件
+                prevEl: ".swiper-button-prev", // 下一頁按鈕物件
+            },
+            scrollbar: {
+                el: ".swiper-scrollbar", // 捲軸物件
+            }
+        })
+    });
+</script>
+
+<!--連接firebase-->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBht-wLbEzKIx3nyQCsqT4QI3c67I6u-Og",
+        authDomain: "xin-ting.firebaseapp.com",
+        projectId: "xin-ting",
+        storageBucket: "xin-ting.appspot.com",
+        messagingSenderId: "913383720619",
+        appId: "1:913383720619:web:263cc3953b24b6831219ee",
+        measurementId: "G-HVCVGVZLHJ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
